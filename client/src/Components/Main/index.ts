@@ -1,2 +1,12 @@
 export { default as ActionButtons } from "./ActionButtons";
 export { default as Libraries } from "./Libraries";
+export { default as Header } from "./Header";
+export { default as Hero } from "./Hero";
+export { default as About } from "./About";
+export { default as Values } from "./Values";
+export { default as Founder } from "./Founder";
+export { default as Services } from "./Services";
+export { default as Project } from "./Project";
+export { default as RecentBlogs } from "./RecentBlogs";
+export { default as Contact } from "./Contact";
+export { default as Sidebar } from "./Sidebar";
