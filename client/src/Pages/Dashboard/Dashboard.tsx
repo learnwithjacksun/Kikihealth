@@ -34,7 +34,7 @@ const Dashboard = () => {
     <DashboardLayout title="Dashboard">
         <div className="grid md:grid-cols-2 grid-cols-1 gap-2">
           {stats.map((stat, index) => (
-            <div key={index} className="bg-white rounded-xl space-y-4 border border-line p-3">
+            <div key={index} className="bg-white rounded-xl space-y-4 border border-green-700/10 p-3 shadow-2xl shadow-green-700/10">
               <div className={`h-11 w-11 center rounded-lg ${stat.color}`}>
                 <stat.icon size={22} />
               </div>
