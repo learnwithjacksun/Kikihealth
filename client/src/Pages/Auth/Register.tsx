@@ -93,8 +93,8 @@ const Register = () => {
           </div>
 
           <ButtonWithLoader
-            initialText="Login"
-            loadingText="Logging in..."
+            initialText="Register"
+            loadingText="Registering..."
             className="btn btn-primary rounded-md w-full h-10 mt-4"
           />
         </form>
