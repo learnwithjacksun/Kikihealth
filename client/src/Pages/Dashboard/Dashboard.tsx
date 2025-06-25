@@ -1,0 +1,61 @@
+import { DashboardLayout } from "@/Layouts"
+import { CalendarHeart, HeartPulse, UserCheck, UsersRound } from "lucide-react"
+
+const Dashboard = () => {
+  const stats = [
+    {
+      title: "Total Services",
+      value: 2,
+      icon: HeartPulse,
+      color: "bg-pink-500/10 text-pink-500"
+    },
+    {
+      title: "Active Service",
+      value: 1,
+      icon: CalendarHeart,
+      color: "bg-purple-500/10 text-purple-500"
+    },
+    {
+      title: "Total Followers",
+      value: 20,
+      icon: UserCheck,
+      color: "bg-green-500/10 text-green-500"
+    },
+    {
+      title: "Total Following",
+      value: 200,
+      icon: UsersRound,
+      color: "bg-yellow-500/10 text-yellow-500"
+    }
+    
+  ]
+  return (
+    <>
+    <DashboardLayout title="Dashboard">
+        <div className="grid md:grid-cols-2 grid-cols-1 gap-2">
+          {stats.map((stat, index) => (
+            <div key={index} className="bg-white rounded-xl space-y-4 border border-line p-3">
+              <div className={`h-11 w-11 center rounded-lg ${stat.color}`}>
+                <stat.icon size={22} />
+              </div>
+              <div>
+                <h4 className="text-muted">{stat.title}</h4>
+                <p className="text-2xl font-bold">{stat.value}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="">
+          <h3 className=" text-muted font-medium">Recent Activities</h3>
+          <div className="mt-4 bg-secondary center h-30 rounded-lg">
+            {/* Recent activities will go here */}
+            <p className="text-muted">No recent activities yet.</p>
+          </div>
+        </div>
+    </DashboardLayout>
+    </>
+  )
+}
+
+export default Dashboard
