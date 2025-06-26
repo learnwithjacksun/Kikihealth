@@ -34,7 +34,7 @@ const Dashboard = () => {
     <DashboardLayout title="Dashboard">
         <div className="grid md:grid-cols-2 grid-cols-1 gap-2">
           {stats.map((stat, index) => (
-            <div key={index} className="bg-white rounded-xl flex gap-4 space-y-4 border border-green-700/10 p-3 shadow-2xl shadow-green-700/10">
+            <div key={index} className="bg-white rounded-xl flex gap-4 space-y-4 border border-gray-100 p-3">
               <div className={`h-11 w-11 center rounded-lg ${stat.color}`}>
                 <stat.icon size={22} />
               </div>
@@ -48,7 +48,7 @@ const Dashboard = () => {
 
         <div className="">
           <h3 className="text-green-800 font-medium">Recent Activities</h3>
-          <div className="mt-4 bg-green-500/5 center h-30 rounded-lg">
+          <div className="mt-4 bg-green-200/10 center h-30 rounded-lg">
             {/* Recent activities will go here */}
             <p className="text-muted">No recent activities yet.</p>
           </div>
