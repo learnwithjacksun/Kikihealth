@@ -13,7 +13,7 @@ const DashboardLayout = ({ children, title }: DashboardLayoutProps) => {
         <div className="flex-1/2 overflow-y-scroll">
           <Header />
           <main className="space-y-6 w-[90%] mx-auto py-6">
-           {title && <h3 className="text-xl font-semibold pl-2 border-l-8 border-green-700 rounded-l-lg"> {title} </h3>}
+           {title && <h3 className="text-xl font-semibold text-green-800 rounded-l-lg"> {title} </h3>}
             {children}
           </main>
         </div>
