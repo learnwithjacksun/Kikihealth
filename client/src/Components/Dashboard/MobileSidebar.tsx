@@ -3,30 +3,53 @@ import { X } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { ButtonWithLoader } from "../UI";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
+const MobileSidebar = ({
+  onClose,
+  isOpen,
+}: {
+  onClose: () => void;
+  isOpen: boolean;
+}) => {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
 
-const MobileSidebar = ({onClose}:{onClose: ()=> void}) => {
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
+
   return (
     <>
-    <motion.div
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-    transition={{ duration: 0.3 }}
-onClick={onClose}
-    className="fixed bg-black/50 inset-0 z-50"/>
       <motion.div
-      initial={{ x: "-100%" }}
-      animate={{ x: 0 }}
-      exit={{ x: "-100%" }}
-      transition={{ type: "spring", stiffness: 300, damping: 30 }}
-      className="h-screen absolute z-100 bg-background inset-y-0 w-[70%] hide-scrollbar flex flex-col overflow-y-scroll border-r border-line">
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.3 }}
+        onClick={onClose}
+        className="fixed bg-black/50 inset-0 z-50"
+      />
+      <motion.div
+        initial={{ x: "-100%" }}
+        animate={{ x: 0 }}
+        exit={{ x: "-100%" }}
+        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        className="h-[100dvh] absolute z-100 bg-background inset-y-0 w-[70%] hide-scrollbar flex flex-col overflow-y-scroll border-r border-line"
+      >
         <header className="flex px-6 items-center justify-between h-[70px]">
           <h3 className="text-xl font-pacifico text-green-800 font-medium">
             Simple Eats
           </h3>
 
-          <button onClick={onClose} className="h-11 w-11 rounded-full text-muted bg-secondary hover:bg-green-300/20 center">
+          <button
+            onClick={onClose}
+            className="h-11 w-11 rounded-full text-muted bg-secondary hover:bg-green-300/20 center"
+          >
             <X size={24} />
           </button>
         </header>

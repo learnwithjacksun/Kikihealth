@@ -105,7 +105,7 @@ const Header = () => {
       </header>
 
       <AnimatePresence>
-        {isOpen && <MobileSidebar onClose={toggleMenu} />}
+        {isOpen && <MobileSidebar isOpen={isOpen} onClose={toggleMenu} />}
       </AnimatePresence>
     </>
   );
