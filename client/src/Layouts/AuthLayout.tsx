@@ -1,4 +1,5 @@
 import { Lock } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface AuthLayoutProps {
   children?: React.ReactNode;
@@ -17,7 +18,7 @@ const AuthLayout = ({ children, title, description }: AuthLayoutProps) => {
         <div className="flex-1/3 overflow-y-scroll">
           <main className="md:w-[480px] w-[90%] space-y-6 mx-auto md:py-10 py-6">
             <div className="space-y-4">
-              <a href="/"><img src="/logo.png" alt="KIKI LOGO" width={80} /></a>
+              <Link to="/"><img src="/logo.png" alt="KIKI LOGO" width={80} /></Link>
               <div className="mt-6">
                 <h1 className="text-2xl font-semibold">{title}</h1>
                 <p className="text-muted">{description}</p>

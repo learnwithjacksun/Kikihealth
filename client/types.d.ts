@@ -10,3 +10,15 @@ interface ButtonWithLoaderProps
   initialText: string;
   loadingText: string;
 }
+
+interface SelectWithIconProps
+  extends React.SelectHTMLAttributes<HTMLSelectElement> {
+  icon?: React.ReactNode;
+  label?: string;
+  error?: string;
+  defaultValue?: string;
+  options: {
+    label: string;
+    value: string;
+  }[];
+}

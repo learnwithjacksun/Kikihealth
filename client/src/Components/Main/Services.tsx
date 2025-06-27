@@ -30,6 +30,13 @@ const Services = () => {
           </div>
         ))}
       </div>
+
+      <Link
+        to="/login"
+        className="flex items-center justify-center text-white h-11 w-[200px] mx-auto rounded-md bg-green-800 font-medium"
+      >
+        See all services 
+    </Link>
     </div>
   );
 };
