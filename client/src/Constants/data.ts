@@ -1,4 +1,4 @@
-import { BadgeCheck, Handshake, Lightbulb, Stethoscope, UserRound } from "lucide-react";
+import { BadgeCheck, Handshake, LayoutDashboard, Lightbulb, MessageSquare, Stethoscope, StethoscopeIcon, UserRound, UsersRound } from "lucide-react";
 
 export const libraries = [
     "Zustand",
@@ -85,4 +85,32 @@ export const services = [
         title: "Corporate Food and Industry Services",
         description: "This service offers a range of nutrition and wellness solutions across corporate, industry, and educational settings. For corporate clients, it includes healthy eating and lifestyle presentations, as well as engaging cooking demonstrations or classes. In the food and beverage industry, services include nutritional analysis of menus, culinary workshops, recipe creation, cookbook development, product development, food styling, and food photography. Educational institutions can benefit from tailored healthy eating and lifestyle presentations designed for schools, classes, or student groups, promoting long-term wellness habits among youth."
     }
+]
+
+export const sidebarItems = [
+    {
+        title: "Dashboard",
+        path: "/dashboard",
+        icon: LayoutDashboard
+    },
+    {
+      title: "Services",
+      path: "/services",
+      icon: StethoscopeIcon
+    },
+    {
+      title: "Members",
+      path: "/members",
+      icon: UsersRound
+    },
+    {
+      title: "Forum",
+      path: "/forum",
+      icon: MessageSquare
+    },
+    {
+      title: "Profile",
+      path: "/profile",
+      icon: UserRound
+    },
 ]

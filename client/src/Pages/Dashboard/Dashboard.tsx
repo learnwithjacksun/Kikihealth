@@ -1,5 +1,6 @@
 import { DashboardLayout } from "@/Layouts"
 import { CalendarHeart, HeartPulse, UserCheck, UsersRound } from "lucide-react"
+import { Link } from "react-router-dom"
 
 const Dashboard = () => {
   const stats = [
@@ -44,6 +45,21 @@ const Dashboard = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="flex items-center gap-4">
+          <Link
+            to="/services"
+            className="mt-4 inline-block bg-green-800 text-white font-semibold px-6 py-3 rounded-lg"
+          >
+            Book a Service
+          </Link>
+          <Link
+            to="/services"
+            className="mt-4 inline-block bg-green-500/10 text-green-800 hover:bg-green-500/20 font-semibold px-6 py-3 rounded-lg"
+          >
+            Join Discussion
+          </Link>
         </div>
 
         <div className="">

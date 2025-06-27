@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Geist:wght@100..900&family=Pacifico&display=swap');
 
 @import "tailwindcss";
 
@@ -26,6 +26,8 @@
 
 @theme {
   --font-sans: 'Geist', sans-serif;
+  --font-dm: 'DM Sans', sans-serif;
+  --font-pacifico:  "Pacifico", cursive;
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-background: var(--background);
@@ -40,7 +42,7 @@
 }
 
 html {
-  @apply bg-background text-main font-sans scroll-smooth;
+  @apply bg-background text-main font-dm scroll-smooth;
 }
 
 .main {
@@ -57,7 +59,7 @@ html {
 
 button,
 .btn {
-  @apply  cursor-pointer font-medium flex items-center justify-center gap-2 disabled:opacity-50;
+  @apply  cursor-pointer font-semibold flex items-center justify-center gap-2 disabled:opacity-50;
 }
 
 .btn-primary {
