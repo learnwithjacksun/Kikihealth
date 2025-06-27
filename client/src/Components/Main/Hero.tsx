@@ -7,7 +7,7 @@ const Hero = () => {
             <h1 className="md:text-6xl text-5xl font-bold text-green-800">Simple Eats <br /> <span className="font-light">With KIKI</span></h1>
             <p className="text-justify md:text-left">Simple Eats with Kiki is envisioned towards activating systems and ensuring the implementation of strategies that will see to it that communities are rebuilt to yield healthier versions of themselves.</p>
             <div className="flex items-center gap-4 mt-4">
-                <Link to="/register" className="btn btn-primary h-11 px-6 rounded-md">Get Started</Link>
+                <Link to="/dashboard" className="btn btn-primary h-11 px-6 rounded-md">Get Started</Link>
                 <a href="/#services" className="btn btn-secondary h-11 px-6 rounded-md">See Services</a>
             </div>
         </div>
