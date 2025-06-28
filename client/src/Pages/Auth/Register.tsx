@@ -29,7 +29,7 @@ const Register = () => {
   return (
     <>
       <AuthLayout
-        title="Join KIKI health"
+        title="Join Kiki Health"
         description="Create an account with your credentials to continue"
       >
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
