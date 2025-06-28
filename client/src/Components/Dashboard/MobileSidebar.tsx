@@ -1,6 +1,6 @@
 import { sidebarItems } from "@/Constants/data";
 import { X } from "lucide-react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { ButtonWithLoader } from "../UI";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
@@ -42,9 +42,11 @@ const MobileSidebar = ({
         className="h-[100dvh] absolute z-100 bg-background inset-y-0 w-[70%] hide-scrollbar flex flex-col overflow-y-scroll border-r border-line"
       >
         <header className="flex px-6 items-center justify-between h-[70px]">
+         <Link to="/">
           <h3 className="text-xl font-pacifico text-green-800 font-medium">
             Simple Eats
           </h3>
+         </Link>
 
           <button
             onClick={onClose}

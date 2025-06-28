@@ -66,15 +66,15 @@ const Footer = () => {
 
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Contact Us</h3>
-            <p className="text-sm text-white/80">11680 Seaton Road</p>
-            <p className="text-sm text-white/80">Richmond, BC</p>
-            <p className="text-sm text-white/80">Canada</p>
+            <p className="text-sm text-white/80"> 24 Safari Close</p>
+            <p className="text-sm text-white/80">Northern Forshore estate</p>
+            <p className="text-sm text-white/80">Chevron drive</p>
           </div>
         </div>
 
         <div className="border-t border-white/10 mt-10 pt-6 text-center">
           <p className="text-sm text-white/60">
-            © {new Date().getFullYear()} Kikihealth. All rights reserved.
+            © {new Date().getFullYear()} SimpleEatswithKiki. All rights reserved.
           </p>
         </div>
       </div>

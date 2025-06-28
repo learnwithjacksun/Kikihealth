@@ -14,7 +14,7 @@ const Founder = () => {
           </div>
           <div className="text-center mt-4">
             <h2 className="text-2xl text-green-800 font-semibold">
-              Christyn Kiki
+             Christyn E. Gobina-Green
             </h2>
             <p className="text-sm text-gray-600">Founder & President</p>
             <p>Clinical Nutritionist</p>

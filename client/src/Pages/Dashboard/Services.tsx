@@ -46,7 +46,7 @@ const Services = () => {
           {services.map((x, y) => (
             <div
               key={y}
-              className="relative border border-line p-4 rounded-lg space-y-2"
+              className="relative border border-line p-4 rounded-lg space-y-2 flex flex-col"
             >
               <p className="text-lg font-semibold w-[100px] "> {x.title} </p>
               <p className="text-muted"> {x.duration} </p>
@@ -68,7 +68,7 @@ const Services = () => {
               </p>
               <button onClick={()=>{
                 toast.warning("This feature is not available yet. Please check back later.");
-              }} className="btn-primary text-sm h-10 w-[150px] rounded-md">
+              }} className="btn-primary text-sm h-10 w-[150px] rounded-md ms-0 mt-auto">
                 {x.buttonText}
               </button>
             </div>

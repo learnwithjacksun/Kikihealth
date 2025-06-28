@@ -1,6 +1,6 @@
 import { sidebarItems } from "@/Constants/data";
 // import { X } from "lucide-react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { ButtonWithLoader } from "../UI";
 
 const DesktopSidebar = () => {
@@ -8,9 +8,11 @@ const DesktopSidebar = () => {
     <>
       <div className="h-screen hide-scrollbar flex flex-col overflow-y-scroll border-r border-line">
         <header className="flex px-6 items-center justify-between h-[70px]">
+          <Link to="/">
           <h3 className="text-xl font-pacifico text-green-800 font-medium">
             Simple Eats
           </h3>
+         </Link>
 
           {/* <button className="h-11 w-11 rounded-full text-muted bg-secondary hover:bg-green-300/20 center">
             <X size={24} />

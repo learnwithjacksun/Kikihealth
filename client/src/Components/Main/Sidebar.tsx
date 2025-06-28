@@ -67,6 +67,9 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
                 <li className="px-4 py-2 hover:bg-gray-100">
                   <a href="/project">Project Eat</a>
                 </li>
+                 <li className="px-4 py-2 hover:bg-gray-100">
+                      <a href="/store">Store</a>
+                    </li>
               </ul>
             </div>
           </li>

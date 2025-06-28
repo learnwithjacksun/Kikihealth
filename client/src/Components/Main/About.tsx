@@ -11,8 +11,7 @@ const About = () => {
         About Us
       </h1>
           <p className="text-justify md:text-left">
-            Simple Eats is an initiative, looking to provide individuals and
-            communities with a sustainable way of eating while taking into
+            Simple Eats with Kiki is a wellness brand focused on dietary, emotional, and physical wellbeing for individuals especially women, looking to provide a sustainable way of eating while taking into
             account their health and well being. Our main focus is to provide
             the public with detailed and well researched health information
             surrounding nutritional food benefits, illness prevention and other
@@ -24,7 +23,7 @@ const About = () => {
               className="btn btn-primary h-11 px-6 rounded-md"
             >
                 <BookCheck/>
-              Book an appointment
+              Schedule a consultation
             </Link>
            
           </div>

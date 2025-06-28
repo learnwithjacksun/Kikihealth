@@ -53,7 +53,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-sora font-bold">Phone</h4>
-                  <p className="text-sm text-muted">(+1) 236 979 0306</p>
+                  <p className="text-sm text-muted">+234 903 383 4972</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -62,7 +62,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-sora font-bold">Email</h4>
-                  <p className="text-sm text-muted">admin@simpleatswithkiki.com</p>
+                  <p className="text-sm text-muted">admin@kikihealth.ca</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -72,7 +72,7 @@ const Contact = () => {
                 <div>
                   <h4 className="font-sora font-bold">Office</h4>
                   <p className="text-sm text-muted">
-                    11680 Seaton Road, Richmond, BC, Canada
+                    24 Safari Close, Northern Forshore estate Chevron drive
                   </p>
                 </div>
               </div>
