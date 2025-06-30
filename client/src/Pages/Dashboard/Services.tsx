@@ -48,8 +48,8 @@ const Services = () => {
               key={y}
               className="relative border border-line p-4 rounded-lg space-y-2 flex flex-col"
             >
-              <p className="text-lg font-semibold w-[100px] "> {x.title} </p>
-              <p className="text-muted"> {x.duration} </p>
+              <p className=" font-medium w-[100px] "> {x.title} </p>
+              <p className="text-muted text-sm"> {x.duration} </p>
               <p className=" font-semibold">
                 {" "}
                 {new Intl.NumberFormat("en-US", {

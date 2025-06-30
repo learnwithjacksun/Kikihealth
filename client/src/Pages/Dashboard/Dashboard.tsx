@@ -55,7 +55,7 @@ const Dashboard = () => {
             Book a Service
           </Link>
           <Link
-            to="/services"
+            to="/forum"
             className="mt-4 inline-block bg-green-500/10 text-green-800 hover:bg-green-500/20 font-semibold px-6 py-3 rounded-lg"
           >
             Join Discussion

@@ -70,7 +70,7 @@ const Founder = () => {
           <div className="flex items-center gap-4 mt-4">
             <Link to="/login" className="btn btn-primary h-11 px-6 rounded-md">
               <BookCheck />
-              Book an appointment
+             Schedule a consultation
             </Link>
           </div>
         </div>

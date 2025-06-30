@@ -62,7 +62,7 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
             <div className="absolute w-full left-0 hidden group-hover:block top-full z-10">
               <ul className="bg-white shadow-lg rounded-md mt-2 overflow-hidden border border-gray-200">
                 <li className="px-4 py-2 hover:bg-gray-100">
-                  <Link to="/blog">Blogs</Link>
+                  <Link to="/blog">Blog</Link>
                 </li>
                 <li className="px-4 py-2 hover:bg-gray-100">
                   <a href="/project">Project Eat</a>
