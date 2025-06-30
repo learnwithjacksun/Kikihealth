@@ -10,7 +10,7 @@ const Founder = () => {
       <div className="main grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-6 min-h-[400px]">
         <div>
           <div className=" bg-green-800/10 center h-[400px] overflow-hidden rounded-md">
-            <img src="/founder.png" alt="Christyn" />
+            <img src="/founder.jpg" alt="Christyn" />
           </div>
           <div className="text-center mt-4">
             <h2 className="text-2xl text-green-800 font-semibold">

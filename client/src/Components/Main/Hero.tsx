@@ -11,7 +11,9 @@ const Hero = () => {
                 <a href="/#services" className="btn btn-secondary h-11 px-6 rounded-md">See Services</a>
             </div>
         </div>
-        <div className="h-full bg-green-800/10 min-h-[350px] rounded-md"></div>
+        <div className="h-full bg-green-800/10 min-h-[350px] rounded-md">
+        <img src="/hero.png" className="w-full h-full object-cover" />
+        </div>
     </div>
   )
 }

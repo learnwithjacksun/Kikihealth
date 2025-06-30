@@ -28,7 +28,9 @@ const About = () => {
            
           </div>
         </div>
-        <div className="h-full bg-green-800/10 min-h-[350px] rounded-md"></div>
+        <div className="h-full bg-green-800/10 h-[350px] rounded-md overflow-hidden">
+         <img src="/about.png" className="w-full h-full object-cover" />
+        </div>
       </div>
     </div>
   );
