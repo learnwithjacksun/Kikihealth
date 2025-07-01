@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import { ButtonWithLoader } from "../UI";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
+import { useAuth } from "@/Hooks";
 
 const MobileSidebar = ({
   onClose,
@@ -12,6 +13,7 @@ const MobileSidebar = ({
   onClose: () => void;
   isOpen: boolean;
 }) => {
+  const { logout, loading } = useAuth();
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -76,6 +78,8 @@ const MobileSidebar = ({
 
         <div className="ms-0 mt-auto mb-4">
           <ButtonWithLoader
+           onClick={logout}
+                loading={loading}
             initialText="Logout"
             loadingText="Logging out..."
             className="w-full h-11 bg-red-500/10 text-red-500 hover:bg-red-500/20 font-semibold"

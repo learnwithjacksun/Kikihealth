@@ -1,4 +1,4 @@
-import { useCountStore } from "@/Stores";
+import { useCountStore } from "@/Store";
 const ActionButtons = () => {
     const { increment, decrement } = useCountStore();
   return (

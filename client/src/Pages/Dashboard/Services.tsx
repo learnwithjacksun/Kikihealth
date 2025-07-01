@@ -46,29 +46,37 @@ const Services = () => {
           {services.map((x, y) => (
             <div
               key={y}
-              className="relative border border-line p-4 rounded-lg space-y-2 flex flex-col"
+              className="relative border border-line p-5 rounded-2xl bg-secondary hover:border-green-800 transition-shadow flex flex-col gap-4"
             >
-              <p className=" font-medium w-[100px] "> {x.title} </p>
-              <p className="text-muted text-sm"> {x.duration} </p>
-              <p className=" font-semibold">
-                {" "}
+              <span
+                className={`text-xs capitalize absolute top-4 right-4 px-3 py-1 rounded-full font-semibold ${
+                  x.status === "available"
+                    ? "bg-green-500/10 text-green-600"
+                    : "bg-red-500/10 text-red-600"
+                }`}
+              >
+                {x.status}
+              </span>
+
+              <h3 className="text-lg font-semibold text-primary w-[130px] md:w-[170px]">{x.title}</h3>
+
+              <p className="text-sm text-muted">Duration: {x.duration}</p>
+
+              <p className="text-base font-bold text-primary">
                 {new Intl.NumberFormat("en-US", {
                   style: "currency",
                   currency: currency === "NGN" ? "NGN" : "CAD",
                 }).format(currency === "NGN" ? x.priceInNGN : x.priceInCAD)}
               </p>
-              <p
-                className={`text-xs capitalize absolute top-2 right-2 py-1 px-3 font-semibold rounded-full ${
-                  x.status === "available"
-                    ? "text-green-500 bg-green-500/10"
-                    : "text-red-500 bg-red-500/10"
-                }`}
+
+              <button
+                onClick={() =>
+                  toast.warning(
+                    "This feature is not available yet. Please check back later."
+                  )
+                }
+                className="btn-primary text-sm h-9 w-full rounded-md mt-auto"
               >
-                {x.status}
-              </p>
-              <button onClick={()=>{
-                toast.warning("This feature is not available yet. Please check back later.");
-              }} className="btn-primary text-sm h-10 w-[150px] rounded-md ms-0 mt-auto">
                 {x.buttonText}
               </button>
             </div>

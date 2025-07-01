@@ -2,11 +2,13 @@ import { ButtonWithLoader } from "@/Components/UI";
 import { AuthLayout } from "@/Layouts";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useForm } from "react-hook-form";
+import { FieldErrors, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerSchema, type RegisterSchema } from "@/schemas/auth";
+import { useAuth } from "@/Hooks";
 
 const Register = () => {
+  const { registerUser, loading } = useAuth();
   const [show, setShow] = useState(false);
   const togglePasswordVisibility = () => {
     setShow((prev) => !prev);
@@ -22,8 +24,11 @@ const Register = () => {
   });
 
   const onSubmit = (data: RegisterSchema) => {
+    registerUser(data);
+  };
+
+  const onError = (data: FieldErrors) => {
     console.log(data);
-    // Handle login logic here, e.g., API call to authenticate user
   };
 
   return (
@@ -32,7 +37,7 @@ const Register = () => {
         title="Join Kiki Health"
         description="Create an account with your credentials to continue"
       >
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+        <form onSubmit={handleSubmit(onSubmit, onError)} className="space-y-4">
           <div>
             <label htmlFor="firstname">
               First Name <span className="text-red-500">*</span>
@@ -142,6 +147,7 @@ const Register = () => {
           </div>
 
           <ButtonWithLoader
+            loading={loading}
             initialText="Register"
             loadingText="Registering..."
             className="btn btn-primary rounded-md w-full h-10 mt-4"

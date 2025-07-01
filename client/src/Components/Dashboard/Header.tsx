@@ -11,9 +11,10 @@ import MobileSidebar from "./MobileSidebar";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ButtonWithLoader } from "../UI";
-
+import { useAuth } from "@/Hooks";
 
 const Header = () => {
+  const { userData, logout, loading } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
   const [isDrop, setIsDrop] = useState(false);
   const toggleMenu = () => {
@@ -55,12 +56,15 @@ const Header = () => {
               onClick={toggleDrop}
               className="flex items-center cursor-pointer gap-4"
             >
-              <p className="hidden md:block text-muted">Gift Jackson</p>
+              <p className="hidden md:block text-muted">
+                {userData?.firstname} {userData?.lastname}
+              </p>
               <div className="flex items-center gap-1 cursor-pointer">
                 <div className="h-11 w-11 rounded-full bg-green-800 text-white font-medium text-lg center">
-                  GJ
+                  {userData?.firstname.charAt(0)}
+                  {userData?.lastname.charAt(0)}
                 </div>
-               {isDrop ? <ChevronUp size={22} /> : <ChevronDown size={22} />}
+                {isDrop ? <ChevronUp size={22} /> : <ChevronDown size={22} />}
               </div>
             </div>
           </div>
@@ -68,10 +72,11 @@ const Header = () => {
           {/* dropdown */}
           {isDrop && (
             <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full right-0 shadow-xl z-40 min-w-[200px] rounded-xl bg-white p-2 border border-line">
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="absolute top-full right-0 shadow-xl z-40 min-w-[200px] rounded-xl bg-white p-2 border border-line"
+            >
               <ul className="flex flex-col gap-2">
                 <li>
                   <Link
@@ -94,6 +99,8 @@ const Header = () => {
                 </li>
 
                 <ButtonWithLoader
+                  onClick={logout}
+                  loading={loading}
                   initialText="Logout"
                   loadingText="Logging out..."
                   className="h-9 bg-red-500 mt-4 text-white rounded-lg text-sm"

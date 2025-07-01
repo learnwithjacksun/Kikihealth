@@ -1,30 +1,32 @@
+import { useAuth } from "@/Hooks"
 import { DashboardLayout } from "@/Layouts"
 import { CalendarHeart, HeartPulse, UserCheck, UsersRound } from "lucide-react"
 import { Link } from "react-router-dom"
 
 const Dashboard = () => {
+  const {userData} = useAuth()
   const stats = [
     {
       title: "Total Services",
-      value: 2,
+      value: 0,
       icon: HeartPulse,
       color: "bg-pink-500/10 text-pink-500"
     },
     {
       title: "Active Service",
-      value: 1,
+      value: 0,
       icon: CalendarHeart,
       color: "bg-purple-500/10 text-purple-500"
     },
     {
       title: "Total Followers",
-      value: 20,
+      value: userData?.followers,
       icon: UserCheck,
       color: "bg-green-500/10 text-green-500"
     },
     {
       title: "Total Following",
-      value: 200,
+      value: userData?.following,
       icon: UsersRound,
       color: "bg-yellow-500/10 text-yellow-500"
     }

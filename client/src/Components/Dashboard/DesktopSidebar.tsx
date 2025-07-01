@@ -2,17 +2,19 @@ import { sidebarItems } from "@/Constants/data";
 // import { X } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 import { ButtonWithLoader } from "../UI";
+import { useAuth } from "@/Hooks";
 
 const DesktopSidebar = () => {
+  const { logout, loading } = useAuth();
   return (
     <>
       <div className="h-screen hide-scrollbar flex flex-col overflow-y-scroll border-r border-line">
         <header className="flex px-6 items-center justify-between h-[70px]">
           <Link to="/">
-          <h3 className="text-xl font-pacifico text-green-800 font-medium">
-            Simple Eats
-          </h3>
-         </Link>
+            <h3 className="text-xl font-pacifico text-green-800 font-medium">
+              Simple Eats
+            </h3>
+          </Link>
 
           {/* <button className="h-11 w-11 rounded-full text-muted bg-secondary hover:bg-green-300/20 center">
             <X size={24} />
@@ -39,6 +41,8 @@ const DesktopSidebar = () => {
 
         <div className="ms-0 mt-auto mb-4">
           <ButtonWithLoader
+            onClick={logout}
+            loading={loading}
             initialText="Logout"
             loadingText="Logging out..."
             className="w-full h-11 bg-red-500/10 text-red-500 hover:bg-red-500/20 font-semibold"
