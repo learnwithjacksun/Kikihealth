@@ -7,8 +7,15 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
 const useAuth = () => {
-  const { user, userData, checkAuth, isCheckingAuth, fetchUser } =
-    useAuthStore();
+  const {
+    user,
+    userData,
+    checkAuth,
+    isCheckingAuth,
+    fetchUser,
+    setUserData,
+    setUser,
+  } = useAuthStore();
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -31,7 +38,6 @@ const useAuth = () => {
       );
 
       await checkAuth();
-      await fetchUser();
 
       await appwrite.databases.createDocument(
         appwrite.DB,
@@ -55,6 +61,7 @@ const useAuth = () => {
           type: "system",
         }
       );
+      await fetchUser();
       toast.success("Account created!");
       navigate("/dashboard");
     } catch (error) {
@@ -68,17 +75,19 @@ const useAuth = () => {
   const login = async (data: LoginSchema) => {
     setLoading(true);
     try {
-      const response = await appwrite.account.createEmailPasswordSession(
+      await appwrite.account.createEmailPasswordSession(
         data.email,
         data.password
       );
+
+      const loggedInUser = await appwrite.account.get();
 
       await appwrite.databases.createDocument(
         appwrite.DB,
         appwrite.NOTIFICATIONS,
         ID.unique(),
         {
-          user: response.$id,
+          user: loggedInUser.$id,
           title: "System Notification",
           description:
             "You successfully logged in from a new device. If this wasn't you, please secure your account immediately.",
@@ -100,11 +109,11 @@ const useAuth = () => {
   const logout = async () => {
     setLoading(true);
     try {
-      const response = await appwrite.account.deleteSession("current");
-      if (response) {
-        toast.success("Logout successful!");
-        navigate("/login");
-      }
+      await appwrite.account.deleteSession("current");
+      toast.success("Logout successful!");
+      navigate("/login");
+      setUserData(null);
+      setUser(null);
     } catch (error) {
       onError(error as Error);
     } finally {

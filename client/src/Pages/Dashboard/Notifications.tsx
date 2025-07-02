@@ -1,18 +1,30 @@
 import { useNotify } from "@/Hooks";
 import { DashboardLayout } from "@/Layouts";
-import { Tv2 } from "lucide-react";
+import { Loader, Tv2 } from "lucide-react";
+import { toast } from "sonner";
 
 const Notifications = () => {
-  const { notifications } = useNotify();
+  const { notifications, markAsRead, isUpdating } = useNotify();
+  const unreadNotification = notifications?.filter(
+    (x) => x.isread === false
+  ).length;
   return (
     <>
       <DashboardLayout title="Notifications">
         <div className="flex items-center justify-between bg-secondary rounded-lg py-2 pl-4 pr-2">
           <p className="text-sm text-muted font-medium">
             Unread:{" "}
-            <span className="text-yellow-600 font-semibold text-base">4</span>
+            <span className="text-yellow-600 font-semibold text-base">
+              {" "}
+              {unreadNotification}{" "}
+            </span>
           </p>
-          <button className="bg-green-800/10 text-green-800 h-9 text-sm px-4 rounded-md">
+          <button
+            onClick={() => {
+              toast.warning("Feature not available yet!");
+            }}
+            className="bg-green-800/10 text-green-800 h-9 text-sm px-4 rounded-md"
+          >
             Mark all as read
           </button>
         </div>
@@ -24,7 +36,11 @@ const Notifications = () => {
               className="flex items-start gap-4 p-4 border border-line rounded-lg bg-background hover:border-green-800 relative"
             >
               {/* Read/Unread Indicator */}
-              <span className="absolute top-3 right-3 h-2 w-2 rounded-full bg-green-600"></span>{" "}
+              {x.isread ? (
+                <span className="absolute top-3 right-3 h-2 w-2 rounded-full bg-muted"></span>
+              ) : (
+                <span className="absolute top-3 right-3 h-2 w-2 rounded-full bg-yellow-600"></span>
+              )}
               {/* change to bg-muted for read */}
               {/* Icon */}
               <div className="bg-green-800/10 min-h-9 min-w-9 center rounded-md text-green-800">
@@ -38,10 +54,17 @@ const Notifications = () => {
                   {new Date(x.$createdAt).toLocaleDateString()}
                 </p>
 
-                {/* Mark as Read Button */}
-                <button className="mt-3 text-xs font-medium text-green-800">
-                  Mark as Read
-                </button>
+                {!x.isread && (
+                  <button
+                    onClick={() => markAsRead(x.$id)}
+                    className="mt-3 text-xs font-medium text-green-800"
+                  >
+                    {isUpdating && (
+                      <Loader size={16} className="animate-spin text-muted" />
+                    )}{" "}
+                    Mark as Read
+                  </button>
+                )}
               </div>
             </div>
           ))}

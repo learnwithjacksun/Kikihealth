@@ -6,6 +6,7 @@ import { persist } from "zustand/middleware";
 interface AuthStoreTypes {
   user: Models.User<Models.Preferences> | null;
   userData: Models.Document | null;
+  setUser: (user: Models.User<Models.Preferences> | null) => void;
   setUserData: (userData: Models.Document | null) => void;
   isCheckingAuth: boolean;
   checkAuth: () => Promise<void>;
@@ -32,14 +33,17 @@ const useAuthStore = create<AuthStoreTypes>()(
             set({ userData });
           } else {
             set({ user: null });
+            set({ userData: null });
           }
         } catch (error) {
           console.log(error);
           set({ user: null });
+          set({ userData: null });
         } finally {
           set({ isCheckingAuth: false });
         }
       },
+      setUser: (user: Models.User<Models.Preferences> | null) => set({ user }),
       setUserData: (userData: Models.Document | null) => set({ userData }),
       fetchUser: async () => {
         try {

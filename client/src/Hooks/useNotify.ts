@@ -3,9 +3,11 @@ import { ID, Query } from "appwrite";
 import { toast } from "sonner";
 import useAuth from "./useAuth";
 import { useQuery } from "@tanstack/react-query";
+import { useState } from "react";
 
 const useNotify = () => {
   const { user } = useAuth();
+  const [isUpdating, setIsUpdating] = useState(false)
   const onError = (error: Error) => {
     console.log(error);
     toast.error((error as Error).message);
@@ -52,13 +54,35 @@ const useNotify = () => {
     queryFn: fetchNotifications
   })
 
+  const markAsRead = async (id: string | undefined)=>{
+    if(!id) return
+    setIsUpdating(true)
+    try {
+      await appwrite.databases.updateDocument(
+        appwrite.DB,
+        appwrite.NOTIFICATIONS,
+        id,
+        {
+          isread: true
+        }
+      )
+     fetchNotifications()
+    } catch (error) {
+      onError(error as Error)
+    } finally{
+      setIsUpdating(false)
+    }
+  }
+
 
 
   return {
     createNotification,
     fetchNotifications,
     notifications,
-    isLoading
+    isLoading,
+    markAsRead,
+    isUpdating
   };
 };
 
