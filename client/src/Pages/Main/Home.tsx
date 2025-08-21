@@ -1,5 +1,6 @@
 import {
   About,
+  Banner,
   Contact,
   Founder,
   Hero,
@@ -20,6 +21,7 @@ const Home = () => {
         <Founder />
         <Services />
         <Project />
+        <Banner />
         <RecentBlogs />
         <Contact />
       </MainLayout>

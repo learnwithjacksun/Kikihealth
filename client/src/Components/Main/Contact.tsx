@@ -4,17 +4,17 @@ const Contact = () => {
   return (
     <div id="contact" className="bg-secondary  py-10">
       <div className="layout space-y-10 ">
-        <h1 className="text-4xl main text-center text-green-800 font-bold">
+        <h1 className="text-4xl main text-center text-green-800 font-bold" data-aos="fade-up">
           Contact Us
         </h1>
         <div className="grid md:grid-cols-2 gap-10">
-          <div className="space-y-6">
+          <div className="space-y-6" data-aos="fade-up">
             <div className="space-y-4">
               <p className="text-sm text-muted">
                 Fill out the form and we'll get back to you shortly.
               </p>
             </div>
-            <form className="space-y-4 bg-white p-4 rounded-2xl">
+            <form className="space-y-4 bg-white p-4 rounded-2xl" data-aos="fade-up">
               <div className="grid md:grid-cols-2 gap-4">
                 <input type="text" placeholder="Your Name" className="input" />
                 <input
@@ -40,13 +40,13 @@ const Contact = () => {
               </button>
             </form>
           </div>
-          <div className="space-y-6">
+          <div className="space-y-6" data-aos="fade-up">
             <div className="space-y-4">
               <p className="text-sm text-muted">
                 Reach out to us through any of these channels.
               </p>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-4" data-aos="fade-up">
               <div className="flex items-start gap-4">
                 <div className="h-11 w-11 center bg-green-800/10 rounded-md">
                   <Phone size={20} className="text-green-800" />
@@ -56,7 +56,7 @@ const Contact = () => {
                   <p className="text-sm text-muted">+234 903 383 4972</p>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-4" data-aos="fade-up">
                 <div className="h-11 w-11 center bg-green-800/10 rounded-md">
                   <Mail size={20} className="text-green-800" />
                 </div>
@@ -65,7 +65,7 @@ const Contact = () => {
                   <p className="text-sm text-muted">admin@kikihealth.ca</p>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-4" data-aos="fade-up">
                 <div className="h-11 w-11 center bg-green-800/10 rounded-md">
                   <MapPin size={20} className="text-green-800" />
                 </div>

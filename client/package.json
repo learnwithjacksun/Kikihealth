@@ -13,6 +13,7 @@
     "@hookform/resolvers": "^5.1.1",
     "@tailwindcss/vite": "^4.0.17",
     "@tanstack/react-query": "^5.71.0",
+    "aos": "^2.3.4",
     "appwrite": "^18.1.1",
     "axios": "^1.8.4",
     "clsx": "^2.1.1",
@@ -29,6 +30,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
+    "@types/aos": "^3.0.7",
     "@types/node": "^22.13.14",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",

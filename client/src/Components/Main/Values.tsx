@@ -3,15 +3,17 @@ import { coreValues } from "@/Constants/data";
 const Values = () => {
   return (
     <div className="layout py-10 space-y-10 ">
-      <h1 className="text-4xl text-center text-green-800 font-bold">
+      <h1 className="text-4xl text-center text-green-800 font-bold" data-aos="fade-up">
         Our Core Values
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-6">
-        {coreValues.map((value) => (
+        {coreValues.map((value, index) => (
           <div
             key={value.title}
             className=" space-y-4 bg-secondary p-4 rounded-md"
+            data-aos="zoom-in"
+            data-aos-delay={index * 100}
           >
             <div className="h-11 w-11 center rounded-md bg-green-800 text-yellow-400">
               <value.icon className="flex-shrink-0" />

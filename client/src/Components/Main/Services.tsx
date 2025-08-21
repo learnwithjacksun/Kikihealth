@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Services = () => {
   return (
     <div id="services" className="main py-10 space-y-10 ">
-      <h1 className="text-4xl main text-center text-green-800 font-bold">
+      <h1 className="text-4xl main text-center text-green-800 font-bold" data-aos="fade-up">
         Our Services
       </h1>
 
@@ -14,6 +14,8 @@ const Services = () => {
           <div
             key={y}
             className="space-y-4 bg-green-500/10 rounded-lg overflow-hidden"
+            data-aos="zoom-in"
+            data-aos-delay={y * 100}
           >
             <div className="overflow-hidden">
               <img src={x.image} className="w-full object-fit-cover" />

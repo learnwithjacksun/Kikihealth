@@ -15,12 +15,21 @@ import Notfound from "./Pages/Notfound";
 import { ProtectedRoute } from "./middleware";
 import { useAuth } from "./Hooks";
 import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const App = () => {
   const { checkAuth } = useAuth();
   useEffect(() => {
     checkAuth();
   }, [checkAuth]);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
 
   return (
     <>

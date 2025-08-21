@@ -10,3 +10,4 @@ export { default as Project } from "./Project";
 export { default as RecentBlogs } from "./RecentBlogs";
 export { default as Contact } from "./Contact";
 export { default as Sidebar } from "./Sidebar";
+export { default as Banner } from "./Banner";

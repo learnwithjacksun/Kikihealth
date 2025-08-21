@@ -6,7 +6,7 @@ const About = () => {
     <div id="about" className="bg-green-800/10 py-10">
       
       <div className="main grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-6 min-h-[400px] items-center ">
-        <div className="space-y-4">
+        <div className="space-y-4" data-aos="fade-up">
             <h1 className="text-4xl font-bold text-green-800">
         About Us
       </h1>
@@ -28,8 +28,8 @@ const About = () => {
            
           </div>
         </div>
-        <div className="h-full bg-green-800/10 h-[350px] rounded-md overflow-hidden">
-         <img src="/about.png" className="w-full h-full object-cover" />
+        <div className=" bg-green-800/10 h-[350px] rounded-md overflow-hidden" data-aos="fade-up">
+         <img src="/about2.jpg" className="w-full h-full object-cover" />
         </div>
       </div>
     </div>
