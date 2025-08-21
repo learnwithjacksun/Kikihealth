@@ -90,7 +90,7 @@ const useAuth = () => {
           user: loggedInUser.$id,
           title: "System Notification",
           description:
-            "You successfully logged in from a new device. If this wasn't you, please secure your account immediately.",
+            "You successfully logged. If this wasn't you, please secure your account immediately.",
           type: "system",
         }
       );
